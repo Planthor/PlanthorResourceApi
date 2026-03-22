@@ -80,6 +80,7 @@ services:
       - pgadmin_data:/var/lib/pgadmin
     networks:
       - app_network
+
   keycloak:
     image: quay.io/keycloak/keycloak:26.5
     container_name: keycloak
@@ -111,9 +112,9 @@ services:
       KC_LOG_LEVEL: ${KC_LOG_LEVEL:-INFO}
     ports:
       - "8180:8180"
-    volumes:
+    # volumes:
       # Realm JSON files placed here are auto-imported on startup
-      - ./keycloak/realms:/opt/keycloak/data/import:ro
+      # - ./keycloak/realms:/opt/keycloak/data/import:ro
       # Optional: custom themes
       # - ./keycloak/themes:/opt/keycloak/themes:ro
     networks:

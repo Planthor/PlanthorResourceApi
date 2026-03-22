@@ -1,15 +1,12 @@
 ﻿using System;
-using FluentValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NSwag;
 using NSwag.Generation.Processors.Security;
-using PlanthorWebApi.Domain.Shared;
 using PlanthorWebApi.Infrastructure;
 using PlanthorWebApi.Infrastructure.Authentication;
-using PlanthorWebApi.Infrastructure.Repositories;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
@@ -28,9 +25,6 @@ try
     builder.Services.AddPlanthorDbContext(
         builder.Configuration.GetConnectionString("PlanthorDbContext")
             ?? throw new InvalidOperationException("PlanthorDbContext is not set in the configuration file."));
-
-    builder.Services.AddScoped(typeof(IWriteRepository<>), typeof(BaseWriteRepository<>));
-    builder.Services.AddScoped(typeof(IReadRepository<>), typeof(BaseReadRepository<>));
 
     builder.Services.AddScoped<IUserService, UserService>();
     builder

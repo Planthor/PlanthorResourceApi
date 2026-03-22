@@ -1,14 +1,22 @@
-using System;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace PlanthorWebApi.Domain.Shared;
 
 /// <summary>
-/// Defines a read-only repository for entities.
+/// Defines a read-only repository for querying entities.
 /// </summary>
-/// <typeparam name="TEntity">The type of the entity.</typeparam>
-public interface IReadRepository<TEntity> where TEntity : IEntity
+/// <typeparam name="TEntity">
+/// The entity type being queried. Does not need to be an aggregate root —
+/// projections and read models are valid here.
+/// </typeparam>
+/// <typeparam name="TId">
+/// The strongly-typed identifier of the entity.
+/// </typeparam>
+public interface IReadRepository<TEntity, TId>
+    where TEntity : IEntity<TId>
+    where TId : notnull
 {
     /// <summary>
     /// Gets an entity by its identifier.

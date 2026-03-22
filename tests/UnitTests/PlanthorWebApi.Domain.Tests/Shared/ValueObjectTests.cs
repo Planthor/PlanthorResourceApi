@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using PlanthorWebApi.Domain.Shared;
 using Xunit;
 
@@ -58,6 +58,27 @@ public class ValueObjectTests
 
         // Act
         var result = valueObject1.Equals(valueObject2);
+
+        // Act & Assert
+        Assert.True(result);
+    }
+
+    [Fact]
+    public void WithSameValuesEqualsReturnTrueShort()
+    {
+        // Arrange
+        var valueObject1 = new TestValueObject
+        {
+            Value = 1
+        };
+
+        var valueObject2 = new TestValueObject
+        {
+            Value = 1
+        };
+
+        // Act
+        var result = valueObject1 == valueObject2;
 
         // Act & Assert
         Assert.True(result);

@@ -1,3 +1,4 @@
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,31 +11,81 @@ namespace PlanthorWebApi.Domain.Shared;
 /// Value objects promote immutability, encapsulation, and strong typing.
 /// They are an essential building block in DDD and Clean Architecture to ensure domain integrity and separation of concerns.
 /// </summary>
-public abstract class ValueObject
+public abstract class ValueObject : IEquatable<ValueObject>
 {
     /// <summary>
-    /// Gets the equality components of the value object.
+    /// Gets the components used to determine equality between
+    /// two value object instances.
     /// </summary>
     protected abstract IEnumerable<object> EqualityComponents { get; }
 
     /// <inheritdoc/>
-    public override bool Equals(object obj)
+    public bool Equals(ValueObject other)
     {
-        if (obj == null || GetType() != obj.GetType())
+        if (other is null)
         {
             return false;
         }
 
-        var other = (ValueObject)obj;
+        if (ReferenceEquals(this, other))
+        {
+            return true;
+        }
 
-        return EqualityComponents.SequenceEqual(other.EqualityComponents);
+        if (GetType() != other.GetType())
+        {
+            return false;
+        }
+
+        var thisComponents = EqualityComponents ?? Enumerable.Empty<object>();
+        var otherComponents = other.EqualityComponents ?? Enumerable.Empty<object>();
+
+        return thisComponents.SequenceEqual(
+            otherComponents,
+            EqualityComparer<object>.Default);
     }
 
     /// <inheritdoc/>
+    public override bool Equals(object obj) =>
+        obj is ValueObject other && Equals(other);
+
+    /// <summary>
+    /// Returns a hash code derived from all equality components.
+    /// </summary>
+    /// <remarks>
+    /// Uses prime-number multiplication rather than XOR to ensure
+    /// that component order matters — preventing collisions between
+    /// value objects whose components are permutations of each other.
+    /// For example, <c>(A, B)</c> and <c>(B, A)</c> will produce
+    /// different hash codes.
+    /// </remarks>
     public override int GetHashCode()
     {
-        return EqualityComponents
-            .Select(x => x != null ? x.GetHashCode() : 0)
-            .Aggregate((x, y) => x ^ y);
+        var components = EqualityComponents ?? Enumerable.Empty<object>();
+
+        unchecked
+        {
+            return components.Aggregate(17, (hash, component) =>
+                hash * 31 + (component?.GetHashCode() ?? 0));
+        }
     }
+
+    /// <summary>
+    /// Determines whether two value objects are structurally equal.
+    /// </summary>
+    public static bool operator ==(ValueObject left, ValueObject right)
+    {
+        if (left is null)
+        {
+            return right is null;
+        }
+
+        return left.Equals(right);
+    }
+
+    /// <summary>
+    /// Determines whether two value objects are not structurally equal.
+    /// </summary>
+    public static bool operator !=(ValueObject left, ValueObject right) =>
+        !(left == right);
 }

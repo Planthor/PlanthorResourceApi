@@ -12,7 +12,7 @@ using PlanthorWebApi.Application.Members.Commands.Update;
 using PlanthorWebApi.Application.Members.Queries.Details;
 using PlanthorWebApi.Application.Members.Queries.Lists;
 
-namespace PlanthorWebApi.Api.Controllers;
+namespace PlanthorWebApi.Api.Controllers.v1;
 
 /// <summary>
 /// Controller for manipulating Members.

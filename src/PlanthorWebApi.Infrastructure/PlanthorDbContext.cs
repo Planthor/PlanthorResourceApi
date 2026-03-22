@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using PlanthorWebApi.Domain;
 
 namespace PlanthorWebApi.Infrastructure;
 
