@@ -1,4 +1,4 @@
-# PlanthorWebApi
+dotnatdo# PlanthorWebApi
 
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Planthor_PlanthorWebApi&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Planthor_PlanthorWebApi)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Planthor_PlanthorWebApi&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Planthor_PlanthorWebApi)
@@ -15,7 +15,7 @@ TODO: Add details feature to WebApi
 
 ## Requirements
 
-- .NET 8 SDK or higher
+- .NET 10 SDK or higher
 - NoSQL database (MongoDB, etc.)
 - Docker/Docker Desktop
 
