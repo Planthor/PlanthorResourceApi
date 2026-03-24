@@ -25,17 +25,17 @@ try
         builder.Configuration.GetConnectionString("PlanthorDbContext")
             ?? throw new InvalidOperationException("PlanthorDbContext is not set in the configuration file."));
 
-    builder.Services.AddScoped<IUserService, UserService>();
-    builder
-        .Services
-        // .AddAuthentication("BasicAuthentication")
-        // .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null)
-        .AddAuthentication()
-        .AddJwtBearer(options =>
-        {
-            options.Authority = "https://localhost:5001";
-            options.Audience = "planthorAPI";
-        });
+    // builder.Services.AddScoped<IUserService, UserService>();
+    // builder
+    //     .Services
+    //     // .AddAuthentication("BasicAuthentication")
+    //     // .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null)
+    //     .AddAuthentication()
+    //     .AddJwtBearer(options =>
+    //     {
+    //         options.Authority = "https://localhost:5001";
+    //         options.Audience = "planthorAPI";
+    //     });
 
     // API Client
     builder.Services.AddControllers();
