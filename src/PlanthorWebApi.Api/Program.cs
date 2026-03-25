@@ -50,7 +50,7 @@ try
     app.MapControllers();
 
     Log.Information("The app started.");
-    app.Run();
+    await app.RunAsync();
 }
 catch (InvalidOperationException ex)  // Catch specific exception
 {

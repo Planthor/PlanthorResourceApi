@@ -1,6 +1,7 @@
 using System;
 using NodaTime;
-using PlanthorWebApi.Domain.Shared;
+
+namespace PlanthorWebApi.Domain.Shared;
 
 /// <summary>
 /// Abstract base implementation of <see cref="IDomainEvent"/>.
