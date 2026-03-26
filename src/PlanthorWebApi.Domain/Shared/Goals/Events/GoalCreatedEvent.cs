@@ -1,10 +1,10 @@
-using System;
+﻿using System;
 using NodaTime;
 
 namespace PlanthorWebApi.Domain.Shared.Goals.Events;
 
 /// <summary>
-/// Initialises a new instance of <see cref="GoalCreatedEvent"/>.
+/// Initializes a new instance of <see cref="GoalCreatedEvent"/>.
 /// </summary>
 /// <param name="goalId">The identifier of the newly created goal.</param>
 /// <param name="memberId">The identifier of the member who owns the goal.</param>
