@@ -1,8 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <ProjectReference Include="..\PlanthorWebApi.Domain\PlanthorWebApi.Domain.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="MongoDB.EntityFrameworkCore" Version="10.0.1" />
   </ItemGroup>
   <PropertyGroup>

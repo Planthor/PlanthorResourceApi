@@ -1,8 +1,8 @@
-{
-  "name": "planthorwebapi-ws",
+﻿{
+  "name": "planthorbackend-ws",
   "dockerComposeFile": "docker-compose.yml",
-  "service": "planthorwebapi",
-  "workspaceFolder": "/workspace/planthorwebapi",
+  "service": "planthorbackend",
+  "workspaceFolder": "/workspace/planthorbackend",
   "customizations": {
     "vscode": {
       "extensions": [

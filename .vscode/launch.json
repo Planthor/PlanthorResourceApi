@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/src/PlanthorWebApi.Api/bin/Debug/net8.0/PlanthorWebApi.Api.dll",
+            "program": "${workspaceFolder}/src/Backend.ResourceApi/bin/Debug/net10.0/Backend.ResourceApi.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/src/PlanthorWebApi.Api",
+            "cwd": "${workspaceFolder}/src/Backend.ResourceApi",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {

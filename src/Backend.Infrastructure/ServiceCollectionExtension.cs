@@ -1,8 +1,7 @@
-using Backend.Infrastructure;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace PlanthorWebApi.Infrastructure;
+namespace Backend.Infrastructure;
 
 /// <summary>
 /// Provides extension methods for <see cref="IServiceCollection"/> to add Planthor DbContext.

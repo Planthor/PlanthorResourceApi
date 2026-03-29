@@ -1,6 +1,6 @@
-# PlanthorWebApi.Application
+﻿# Backend.Application
 
-This folder contains the application layer of the PlanthorWebApi project, following the principles of Clean Architecture.
+This folder contains the application layer of the Planthor Backend project, following the principles of Clean Architecture.
 
 ## Application Layer
 

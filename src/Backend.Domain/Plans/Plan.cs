@@ -28,8 +28,7 @@ public class Plan : AggregateRoot<Guid>
         bool enableActivityLog,
         bool completed,
         PlanStatus status,
-        int likeCount
-        )
+        int likeCount)
     {
         MemberId = memberId;
         Name = name;
