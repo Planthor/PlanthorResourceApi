@@ -2,7 +2,7 @@
 using System.Data.Common;
 using System.Linq;
 using Backend.Infrastructure;
-using Backend.ResourceApi.Tests.TestAuthentication;
+using Backend.Api.Tests.TestAuthentication;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Backend.ResourceApi.Tests;
+namespace Backend.Api.Tests;
 
 /// <summary>
 /// A factory for creating instances of the web application for integration testing.

@@ -12,7 +12,7 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Backend.ResourceApi.Controllers.v1;
+namespace Backend.Api.Controllers.v1.Resources;
 
 /// <summary>
 /// Controller for manipulating Personal Goals.

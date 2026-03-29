@@ -7,8 +7,6 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Planthor_PlanthorWebApi&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Planthor_PlanthorWebApi)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Planthor_PlanthorWebApi&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Planthor_PlanthorWebApi)
 
-PlanthorResourceApi is a RESTful API project designed to support the Planthor application. This project is built using .NET 10 and utilizes a NoSQL database.
-
 ## Features
 
 Please refer to [Planthor Wiki - Features](https://github.com/Planthor/planthor-documentation/wiki/Features) for more features information.
