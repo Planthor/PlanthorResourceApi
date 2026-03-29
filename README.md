@@ -1,4 +1,4 @@
-﻿# PlanthorResourceApi
+﻿# Planthor Backend
 
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Planthor_PlanthorWebApi&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Planthor_PlanthorWebApi)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Planthor_PlanthorWebApi&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Planthor_PlanthorWebApi)
@@ -11,7 +11,7 @@ PlanthorWebApi is a RESTful API project designed to support the Planthor applica
 
 ## Features
 
-TODO: Add details feature to WebApi
+Please refer to [Planthor Wiki - Features](https://github.com/Planthor/planthor-documentation/wiki/Features) for more features information.
 
 ## Requirements
 
