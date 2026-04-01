@@ -7,4 +7,7 @@
     <PackageReference Include="MediatR" Version="14.1.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.5" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Backend.Domain\Backend.Domain.csproj" />
+  </ItemGroup>
 </Project>

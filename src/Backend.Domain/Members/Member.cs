@@ -18,6 +18,7 @@ namespace Backend.Domain.Members;
 /// to maintain consistency within the aggregate boundary.
 /// </remarks>
 public class Member(
+    string identifyName,
     string firstName,
     string middleName,
     string lastName,
@@ -27,6 +28,11 @@ public class Member(
 {
     private readonly List<ExternalConnection> _externalConnections = [];
     private readonly List<PersonalPlan> _personalPlans = [];
+
+    /// <summary>
+    /// Gets the unique identifier or username from the identity provider.
+    /// </summary>
+    public string IdentifyName { get; private set; } = identifyName;
 
     /// <summary>
     /// Gets the first name of the member.
@@ -230,6 +236,35 @@ public class Member(
         _personalPlans.Remove(personalPlan);
 
         StampUpdatedAudit(Id, clock);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="Member"/> aggregate.
+    /// </summary>
+    public static Member Create(
+        string identifyName,
+        string firstName,
+        string middleName,
+        string lastName,
+        string description,
+        string pathAvatar,
+        string preferredTimezone,
+        IClock clock)
+    {
+        var member = new Member(
+            identifyName,
+            firstName,
+            middleName,
+            lastName,
+            description,
+            pathAvatar,
+            preferredTimezone)
+        {
+            Id = Guid.NewGuid()
+        };
+
+        member.StampCreatedAudit(member.Id, clock);
+        return member;
     }
 
     /// <inheritdoc/>

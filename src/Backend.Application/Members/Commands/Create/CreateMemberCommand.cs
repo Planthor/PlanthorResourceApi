@@ -13,6 +13,7 @@ namespace Backend.Application.Members.Commands.Create;
 /// <param name="PathAvatar">The path or URL to the member's avatar image.</param>
 /// <param name="PreferredTimezone">The IANA timezone identifier preferred by the member (e.g., "Asia/Ho_Chi_Minh").</param>
 public record CreateMemberCommand(
+    string IdentifyName,
     string FirstName,
     string? MiddleName,
     string LastName,
