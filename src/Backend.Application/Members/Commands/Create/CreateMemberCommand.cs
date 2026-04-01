@@ -1,21 +1,21 @@
-﻿using System;
+using System;
 using Backend.Application.Shared;
 
 namespace Backend.Application.Members.Commands.Create;
 
 /// <summary>
-/// 
+/// Command to create a new member.
 /// </summary>
-/// <param name="IdentifyName"></param>
-/// <param name="FirstName"></param>
-/// <param name="MiddleName"></param>
-/// <param name="LastName"></param>
-/// <param name="Description"></param>
-/// <param name="PathAvatar"></param>
+/// <param name="FirstName">The first name of the member.</param>
+/// <param name="MiddleName">The middle name of the member.</param>
+/// <param name="LastName">The last name of the member.</param>
+/// <param name="Description">A free-text description or bio of the member.</param>
+/// <param name="PathAvatar">The path or URL to the member's avatar image.</param>
+/// <param name="PreferredTimezone">The IANA timezone identifier preferred by the member (e.g., "Asia/Ho_Chi_Minh").</param>
 public record CreateMemberCommand(
-    string IdentifyName,
     string FirstName,
     string? MiddleName,
     string LastName,
     string? Description,
-    string? PathAvatar) : ICommand<Guid>;
+    string? PathAvatar,
+    string PreferredTimezone) : ICommand<Guid>;
