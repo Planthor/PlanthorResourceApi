@@ -1,5 +1,4 @@
 ﻿using System;
-using Domain.Members;
 using Domain.Shared;
 using NodaTime;
 

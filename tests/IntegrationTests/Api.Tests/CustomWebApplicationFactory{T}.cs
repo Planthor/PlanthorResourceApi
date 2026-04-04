@@ -2,7 +2,7 @@
 using System.Data.Common;
 using System.Linq;
 using Api.Tests.TestAuthentication;
-using Infrastructure;
+using Infrastructure.Context;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;

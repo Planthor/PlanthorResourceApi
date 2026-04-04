@@ -3,7 +3,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Application.Shared;
 using Domain.Members;
-using Domain.Shared;
 using NodaTime;
 
 namespace Application.Members.Commands.Create;
@@ -12,7 +11,7 @@ namespace Application.Members.Commands.Create;
 /// Handles the creation of a new member.
 /// </summary>
 public class CreateMemberCommandHandler(
-    IWriteRepository<Member> memberRepository,
+    IMemberRepository memberRepository,
     IClock clock) : ICommandHandler<CreateMemberCommand, Guid>
 {
 

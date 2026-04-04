@@ -1,9 +1,15 @@
 ﻿using System;
+using Application.Members.Commands.Create;
+using Application.Members.Commands.Update;
+using Application.Members.Queries.Details;
+using FluentValidation;
 using Infrastructure;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NodaTime;
 using Scalar.AspNetCore;
 using Serilog;
 
@@ -19,6 +25,20 @@ try
 
     // Infrastructure
     builder.Host.UseSerilog();
+
+    builder.Services.AddSingleton<IClock>(SystemClock.Instance);
+    builder.Services.AddMediatR(cfg =>
+    {
+        // TODO (Trung) : Use Environment Variable to get LicenseKey Mediatr.
+        cfg.LicenseKey = "";
+        cfg.RegisterServicesFromAssembly(typeof(Program).Assembly);
+    });
+
+    builder.Services.AddScoped<IRequestHandler<CreateMemberCommand, Guid>, CreateMemberCommandHandler>();
+
+    builder.Services.AddScoped<IValidator<CreateMemberCommand>, CreateMemberCommandValidator>();
+    builder.Services.AddScoped<IValidator<UpdateMemberCommand>, UpdateMemberCommandValidator>();
+    builder.Services.AddScoped<IValidator<MemberDetailsQuery>, MemberDetailsQueryValidator>();
 
     builder.Services.AddPlanthorDbContext(
         builder.Configuration.GetConnectionString("PlanthorDbContext")

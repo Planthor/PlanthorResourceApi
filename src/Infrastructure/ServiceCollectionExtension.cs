@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Domain.Members;
+using Infrastructure.Context;
+using Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure;
@@ -22,6 +25,9 @@ public static class ServiceCollectionExtension
         {
             options.UseMongoDB(connectionString, "planthordb");
         });
+
+        // Register your specific aggregate repositories (Manual DI)
+        services.AddScoped<IMemberRepository, MemberRepository>();
 
         return services;
     }

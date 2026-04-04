@@ -44,11 +44,11 @@ public class ConnectionStatus
     /// </summary>
     public string I18NKey { get; }
 
-    private ConnectionStatus(string id, string name, string descriptionI18nKey)
+    private ConnectionStatus(string id, string name, string i18nKey)
     {
         Id = id;
         Name = name;
-        I18NKey = descriptionI18nKey;
+        I18NKey = i18nKey;
     }
 
     /// <summary>

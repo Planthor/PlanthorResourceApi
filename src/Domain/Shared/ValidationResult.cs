@@ -32,7 +32,7 @@ public sealed class ValidationResult(IReadOnlyList<ValidationError> errors)
     {
         get
         {
-            return this.Errors.Count == 0;
+            return Errors.Count == 0;
         }
     }
 

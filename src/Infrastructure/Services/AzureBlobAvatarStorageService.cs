@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Application.Shared;
 
-namespace Infrastructure;
+namespace Infrastructure.Services;
 
 public class AzureBlobAvatarStorageService : IAvatarStorageService
 {

@@ -1,13 +1,15 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Application.Shared;
+using Domain.Members;
+using Domain.Plans;
 using Domain.Shared;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure;
+namespace Infrastructure.Context;
 
 /// <summary>
 /// Represents the database context for the Planthor application.
@@ -15,6 +17,9 @@ namespace Infrastructure;
 /// <param name="options">The options to be used by a <see cref="DbContext"/>.</param>
 public class PlanthorDbContext(DbContextOptions options, IPublisher publisher) : DbContext(options)
 {
+    public DbSet<Member> Members => Set<Member>();
+    public DbSet<Plan> Plans => Set<Plan>();
+
     /// <inheritdoc/>
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -18,4 +18,5 @@ public record UpdateMemberCommand(
     string? MiddleName,
     string LastName,
     string? Description,
-    string? PathAvatar) : ICommand;
+    string? PathAvatar,
+    string PreferredTimezone) : ICommand;
