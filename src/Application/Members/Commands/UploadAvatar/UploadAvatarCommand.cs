@@ -1,6 +1,5 @@
-﻿namespace Application.Members.Commands.UploadAvatar;
+﻿using Application.Shared;
 
-public class UploadAvatarCommand
-{
+namespace Application.Members.Commands.UploadAvatar;
 
-}
+public record UploadAvatarCommand : ICommand<string>;
