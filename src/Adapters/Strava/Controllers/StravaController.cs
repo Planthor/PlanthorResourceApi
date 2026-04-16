@@ -9,7 +9,7 @@ namespace Adapters.Strava.Controllers;
 /// real-time push event processing, and manual activity sync.
 /// </summary>
 [ApiController]
-[Route("v1/[controller]")]
+[Route("[controller]")]
 public class StravaController : ControllerBase
 {
     /// <summary>
